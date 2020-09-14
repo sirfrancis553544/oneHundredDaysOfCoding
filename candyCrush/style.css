@@ -1,35 +1,35 @@
 .grid {
-    height: 560px;
-    min-width: 560px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 80px;
-    margin-top: 50px;
-    background-color: rgba(109, 127, 151, 0.5);
-    padding:5px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
-    color: #85796b;
+  height: 560px;
+  min-width: 560px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 80px;
+  margin-top: 50px;
+  background-color: rgba(109, 127, 151, 0.5);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+  color: #85796b;
 }
 
 .grid div {
-    height: 70px;
-    width: 70px;
+  height: 70px;
+  width: 70px;
 }
 
 h3 {
- font-family: "Montserrat", sans-serif;
- text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
 h1 {
- font-family: "Montserrat", sans-serif;
- text-transform: uppercase;
- margin-top: -10px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  margin-top: -10px;
 }
 
 .invisible {
-    background-color: white;
+  background-color: white;
 }
 
 body {
@@ -51,7 +51,7 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  background-image: linear-gradient(#FFB6C1, #FFC0CB);
+  background-image: linear-gradient(#ffb6c1, #ffc0cb);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
   color: #85796b;
 }
