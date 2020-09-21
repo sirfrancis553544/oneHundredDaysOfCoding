@@ -1,11 +1,23 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
-  width: 400px;
+  height: 320px;
+  width: 420px;
 
   position: relative;
   margin: auto;
+
+  padding-top: 30px;
+  border-bottom-width: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  
+  background-color: #bbe1fa;
+  border-radius: 10px;
+
+  background-image: linear-gradient(#bbe1fa, #a8cbe2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+  color: #85796b;
 }
 img {
   width: 100px;
@@ -14,7 +26,10 @@ img {
 .result {
   position: relative;
   left: 210px;
-    top: 28px;
+  top: 28px;
   width: 500px;
   height: 60px;
+}
+body {
+  background-color: #bbe1fa;
 }
