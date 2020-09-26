@@ -28,8 +28,7 @@ solarButton.onclick = () => {
 
     localStorage.removeItem("isSolar");
   } else {
-    solarButton.style.cssText = `
-        --bg-solar: wite;`;
+    solarButton.style.cssText = `--bg-solar: wite;`;
     body.classList.add("solar");
     solarButton.innerText = "normalize";
 
