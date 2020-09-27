@@ -1,44 +1,31 @@
 import React, { Component } from "react";
 import UserItem from "./UserItem";
+import Spinner from "../layout/Spinner";
+import PropTypes from 'prop-types'
 
-class Users extends Component {
-  state = {
-    users: [
-      {
-        id: "1",
-        login: "Mojombo",
-        avatar_url:
-          "https://wi-images.condecdn.net/image/jgov7eBrRvb/crop/810/f/6-facial-recognition-hero.jpg",
-        html_url: "https://github.com/mojombo",
-      },
-      {
-        id: "2",
-        login: "Adam",
-        avatar_url:
-          "https://wi-images.condecdn.net/image/jgov7eBrRvb/crop/810/f/6-facial-recognition-hero.jpg",
-        html_url: "https://github.com/mojombo",
-      },
-      {
-        id: "3",
-        login: "Eve",
-        avatar_url:
-          "https://wi-images.condecdn.net/image/jgov7eBrRvb/crop/810/f/6-facial-recognition-hero.jpg",
-        html_url: "https://github.com/mojombo",
-      },
-    ],
-  };
 
-  render() {
+
+const Users = ({ users, loading }) => {
+  if (loading) {
+    return <Spinner />;
+  } else {
     return (
       <div style={userStyle}>
-        {this.state.users.map((user) => (
+        {users.map((user) => (
           <UserItem key={user.id} user={user} />
         ))}
       </div>
     );
   }
+};
+
+Users.prototype = {
+  users: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+
 }
-// making grid box 
+
+// making grid box
 const userStyle = {
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
