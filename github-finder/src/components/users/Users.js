@@ -20,8 +20,6 @@ const Users = ({}) => {
   }
 };
 
-
-
 // making grid box
 const userStyle = {
   display: "grid",
