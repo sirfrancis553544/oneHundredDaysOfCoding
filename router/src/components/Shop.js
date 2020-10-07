@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import ReactDom from "react-dom"
 
 import "../App.css";
-
+// npm start 
 function Shop() {
   const [name, setName] = useState();
   const [tagline, setTagline] = useState();
