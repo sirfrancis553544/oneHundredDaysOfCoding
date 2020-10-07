@@ -1,4 +1,4 @@
-nav{
+nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -6,10 +6,22 @@ nav{
   background-color: rgb(73, 79, 82);
   color: white;
 }
-.nav-links{
+.nav-links {
   width: 50%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  height: 15%;
+}
+
+.center {
+  text-align: center;
+  padding-top: 20px;
 }
