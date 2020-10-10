@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/Home";
 import User from "./components/users/User";
+import MyPage from "./components/users/mypage";
 import Alert from "./components/layout/Alert";
 import About from "./components/pages/About";
 import NotFound from "./components/pages/NotFound";
@@ -24,6 +25,7 @@ const App = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/user/:login" component={User} />
+                <Route exact path="/user/:sirfrancis553544" component={MyPage} />
                 <Route component={NotFound} />
               </Switch>
             </div>
@@ -35,3 +37,4 @@ const App = () => {
 };
 
 export default App;
+// npn start 

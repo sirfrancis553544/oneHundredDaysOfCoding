@@ -1,4 +1,6 @@
 import random
+from .magic import Spell
+import pprint
 
 
 class Colors:
@@ -27,16 +29,16 @@ class Person:
     def generate_damage(self):
         return random.randrange(self.attack_low, self.attack_high)
 
-    def generate_spell_damage(self, index):
-        magic_low = self.magic[index]["damage"] - 5
-        magic_high = self.magic[index]["damage"] + 5
-        return random.randrange(magic_low, magic_high)
-
     def take_damage(self, damage):
         self.hp -= damage
         if self.hp < 0:
             self.hp = 0
         return self.hp
+
+    def heal(self, damage):
+        self.hp += damage
+        if self.hp > self.max_hp:
+            self.hp = self.max_hp
 
     # Utilities
     def get_hp(self):
@@ -54,12 +56,6 @@ class Person:
     def reduce_magic_points(self, cost):
         self.magic_points -= cost
 
-    def get_spell_name(self, index):
-        return self.magic[index]["name"]
-
-    def get_spell_magic_points(self, index):
-        return self.magic[index]["cost"]
-
     def choose_action(self):
         index = 1
         print("Action")
@@ -69,7 +65,7 @@ class Person:
 
     def choose_magic(self):
         index = 1
-        print("Magic")
+        print(Colors.BLUE + Colors.BOLD + "Magic")
         for spell in self.magic:
-            print(str(index) + ":", spell["name"], "(cost:", str(spell["magic_points"])+")")
+            print(str(index) + ":", spell.name, "(cost:", str(spell.cost)+")")
             index += 1

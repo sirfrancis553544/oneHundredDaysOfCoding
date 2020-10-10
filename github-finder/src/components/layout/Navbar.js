@@ -13,6 +13,10 @@ const Navbar = ({ icon, title }) => {
           <Link to="/">Home</Link>
         </li>
         <li>
+          <Link to="/user/sirfrancis553544">Me</Link>
+          {/* exact */}
+        </li>
+        <li>
           <Link to="/about">About</Link>
         </li>
       </ul>
