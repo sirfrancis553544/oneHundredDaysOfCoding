@@ -64,6 +64,11 @@ for app in apps:
     label = tk.Label(frame, text=app)
     label.pack()
 
+
+root.title("RunApps")
+
+
+root.iconbitmap("C:/Users/Daniel/Documents/GitHub/oneHundredDaysOfCoding/Python/TaskRun")
 root.mainloop()
 
 # write to a text file to save data for reopen
