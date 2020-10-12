@@ -1,1 +1,1 @@
-C:/Program Files (x86)/Google/Chrome/Application/chrome.exe,
+C:/Program Files (x86)/Astrill/astrill.exe,C:/Program Files (x86)/Google/Chrome/Application/chrome.exe,
