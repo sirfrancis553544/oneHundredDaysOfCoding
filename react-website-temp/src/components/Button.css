@@ -25,12 +25,12 @@
   transition: all 0.3s ease-out;
 }
 
-.btn-medium {
+.btn--medium {
   padding: 8px 20px;
   font-size: 18px;
 }
 
-.btn-large {
+.btn--large {
   padding: 12px 26px;
   font-size: 20px;
 }
@@ -40,14 +40,15 @@
   border-radius: 4px;
   width: 80%;
   text-decoration: none;
-  font-size: 24;
+  font-size: 1.5rem;
   background-color: transparent;
   color: #fff;
+  padding: 14px 20px;
   border: 1px solid #fff;
   transition: all 0.3s ease-out;
 }
 
-.btn-wide {
+.btn--wide {
   padding: 12px 64px;
   font-size: 20px;
 }
@@ -60,10 +61,20 @@
   color: #242424;
 }
 
-.btn-wide:hover {
+.btn--wide:hover {
   color: #fff;
   background-color: #f00946;
   transition: all 0.2s ease-out;
+}
+
+.btn-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 16px;
+  height: 100%;
+  width: 100%;
 }
 
 .blue {
@@ -91,21 +102,11 @@
 }
 
 .green {
-  background-color: #25ce4a;
+  background: #25ce4a;
   color: #fff;
   border: none;
 }
 
 .green:hover {
   background-color: #242424;
-}
-
-.btn-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  padding: 8px 16px;
-  height: 100%;
-  width: 100%;
 }
