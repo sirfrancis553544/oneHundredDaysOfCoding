@@ -1,0 +1,27 @@
+header{
+    background: #2e354f;
+    padding: 45px 0;
+    color: #fff;
+    border: 2px solid black;
+}
+
+section{
+    padding: 45px 0;
+    border: 2px solid black;
+}
+
+.container{
+    width: 90%;
+    max-width: 620px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+.section-two{
+    background: #2e354f;
+    color: #fff;
+    border: 2px solid black;
+}
+img{
+    width: 100%;
+}
