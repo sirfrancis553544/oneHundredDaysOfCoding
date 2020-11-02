@@ -29,6 +29,7 @@ clipboard.addEventListener('click', () => {
 });
 
 generate.addEventListener('click', () => {
+    // plus sign was added to make it a number
 	const length = +lengthEl.value;
 	const hasLower = lowercaseEl.checked;
 	const hasUpper = uppercaseEl.checked;
@@ -61,9 +62,13 @@ function generatePassword(lower, upper, number, symbol, length) {
 	return finalPassword;
 }
 
+// generate random lower 97 lower case = a:  97-122(a-z)
 function getRandomLower() {
-	return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+    
 }
+console.log(getRandomLower())
+
 
 function getRandomUpper() {
 	return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
