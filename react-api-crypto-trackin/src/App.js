@@ -30,8 +30,7 @@ function App() {
 
   return (
     <div className="coin-app">
-   
-      <div className="coin-search">  
+      <div className="coin-search">
         <h1 className="coin-text">100 Top Crypto Currencies</h1>
         <h2 className="coin-text">Search a currency</h2>
         <form>
@@ -42,8 +41,28 @@ function App() {
             onChange={handleChange}
           />
         </form>
-      </div> 
+      </div>
+      
+      <div className="coin-container"> 
+      <div className="coin-row">
+      <thead>
+        <tr>
+          <th className="coin">Coin Name</th>
+          <th className="coin-symbol">Symbol</th>
+          
+          <th className="coin-price">Price</th>
+          <th className="coin-volume">Volume</th>
+          <th className="coin-percent">Range</th>
+          <th className="coin-marketcap">Market Cap</th>
+        </tr>
+          </thead>
+          
+          </div>
+      </div>
+      
+
       {filteredCoins.map((coin) => {
+        
         return (
           <Coin
             key={coin.id}
@@ -54,7 +73,6 @@ function App() {
             price={coin.current_price}
             priceChange={coin.price_change_percentage_24h}
             volume={coin.total_volume}
-
           />
         );
       })}
@@ -63,5 +81,3 @@ function App() {
 }
 
 export default App;
-
-
