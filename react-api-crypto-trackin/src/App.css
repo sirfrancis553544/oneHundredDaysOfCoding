@@ -1,15 +1,4 @@
-@import url("https://font.googleapis.com/css2?family=Montserrat&display=swap");
-/* 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: #070d59;
-  background-color: #f6f5f5; 
-  color: #ffffff;
-  background-color: #2f3140;
-} */
+
 
 .coin-app {
   display: flex;
