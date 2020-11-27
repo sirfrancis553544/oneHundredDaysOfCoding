@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Content } from "./components/Content";
+import { Content } from "./darkMode/components/Content";
+import { useDarkMode } from "./darkMode/styles/useDarkMode";
+import { Toggle } from "./darkMode/components/Toggle";
+import {
+  GlobalStyles,
+  lightTheme,
+  darkTheme,
+} from "./darkMode/styles/globalStyle";
 
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
 import axios from "axios";
 import "./App.css";
@@ -15,6 +22,8 @@ const Container = styled.div`
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
+  const [theme, toggleTheme] = useDarkMode();
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   useEffect(() => {
     let numberOfCoins = 50;
@@ -25,7 +34,7 @@ function App() {
       )
       .then((res) => {
         setCoins(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -40,9 +49,13 @@ function App() {
 
   return (
     <div className="coin-app">
-      <Container>
-        <Content />
-      </Container>
+      <ThemeProvider theme={themeMode}>
+        <Container>
+          <GlobalStyles />
+          <Toggle theme={theme} toggleTheme={toggleTheme} />
+          <Content />
+        </Container>
+      </ThemeProvider>
 
       <div className="coin-search">
         <h1 className="coin-text">100 Top Crypto Currencies</h1>
