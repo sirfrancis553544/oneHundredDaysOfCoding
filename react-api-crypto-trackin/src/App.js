@@ -8,10 +8,11 @@ function App() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    let pages = 100;
+    let numberOfCoins = 50;
+    let pageNumber = 1;
     axios
       .get(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${pages}&page=1&sparkline=false`
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${numberOfCoins}&page=${pageNumber}&sparkline=false`
       )
       .then((res) => {
         setCoins(res.data);
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div className="coin-app">
+      
       <div className="coin-search">
         <h1 className="coin-text">100 Top Crypto Currencies</h1>
         <h2 className="coin-text">Search a currency</h2>
@@ -42,27 +44,24 @@ function App() {
           />
         </form>
       </div>
-      
-      <div className="coin-container"> 
-      <div className="coin-row">
-      <thead>
-        <tr>
-          <th className="coin">Coin Name</th>
-          <th className="coin-symbol">Symbol</th>
-          
-          <th className="coin-price">Price</th>
-          <th className="coin-volume">Volume</th>
-          <th className="coin-percent">Range</th>
-          <th className="coin-marketcap">Market Cap</th>
-        </tr>
+
+      <div className="coin-container">
+        <div className="coin-row">
+          <thead>
+            <tr>
+              <th className="coin">Coin Name</th>
+              <th className="coin-symbol">Symbol</th>
+
+              <th className="coin-price">Price</th>
+              <th className="coin-volume">Volume</th>
+              <th className="coin-percent">Range</th>
+              <th className="coin-marketcap">Market Cap</th>
+            </tr>
           </thead>
-          
-          </div>
+        </div>
       </div>
-      
 
       {filteredCoins.map((coin) => {
-        
         return (
           <Coin
             key={coin.id}
