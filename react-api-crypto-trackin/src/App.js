@@ -57,6 +57,7 @@ function App() {
         </Container>
       </ThemeProvider>
 
+      {/* todo move search into its own component */}
       <div className="coin-search">
         <h1 className="coin-text">100 Top Crypto Currencies</h1>
         <h2 className="coin-text">Search a currency</h2>
