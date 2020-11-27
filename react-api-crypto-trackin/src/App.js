@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { Content } from "./components/Content";
+
+import styled from "styled-components";
+
 import axios from "axios";
-// import DarkModeToggle from "react-dark-mode-toggle";
 import "./App.css";
 import Coin from "./coin";
+
+const Container = styled.div`
+  max-width: 50%;
+  margin: 8rem auto 0;
+`;
 
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
-  // const [isDarkMode, setIsDarkMode] = useState(() => false);
 
   useEffect(() => {
     let numberOfCoins = 50;
@@ -33,10 +40,12 @@ function App() {
 
   return (
     <div className="coin-app">
-      
+      <Container>
+        <Content />
+      </Container>
+
       <div className="coin-search">
         <h1 className="coin-text">100 Top Crypto Currencies</h1>
-        {/* <DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={60} /> */}
         <h2 className="coin-text">Search a currency</h2>
         <form>
           <input
