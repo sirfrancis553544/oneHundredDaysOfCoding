@@ -11,7 +11,7 @@ Sun = Moon = styled.svg`
 `;
 
 export const Toggle = ({ theme, toggleTheme }) => {
-  console.log(theme);
+//   console.log(theme);
   return (
     <div onClick={toggleTheme}>
       {theme === "light" ? (

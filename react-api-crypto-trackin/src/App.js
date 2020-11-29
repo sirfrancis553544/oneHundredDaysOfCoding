@@ -7,6 +7,7 @@ import {
   lightTheme,
   darkTheme,
 } from "./darkMode/styles/globalStyle";
+import Apps from "./pagination/Apps";
 
 import styled, { ThemeProvider } from "styled-components";
 
@@ -53,6 +54,7 @@ function App() {
         <Container>
           <GlobalStyles />
           <Toggle theme={theme} toggleTheme={toggleTheme} />
+          <Apps />
           <Content />
         </Container>
       </ThemeProvider>
@@ -77,7 +79,6 @@ function App() {
             <tr>
               <th className="coin">Coin Name</th>
               <th className="coin-symbol">Symbol</th>
-
               <th className="coin-price">Price</th>
               <th className="coin-volume">Volume</th>
               <th className="coin-percent">Range</th>
