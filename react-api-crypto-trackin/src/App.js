@@ -7,12 +7,16 @@ import {
   lightTheme,
   darkTheme,
 } from "./darkMode/styles/globalStyle";
+import Base from "./pag/Base";
 import Apps from "./pagination/Apps";
+import ReactPaginate from "react-paginate";
+import "./pag/styles.css";
 
 import styled, { ThemeProvider } from "styled-components";
 
 import axios from "axios";
 import "./App.css";
+// import "./coin.css"
 import Coin from "./coin";
 
 const Container = styled.div`
@@ -27,12 +31,12 @@ function App() {
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   useEffect(() => {
-    let numberOfCoins = 50;
+    let numberOfCoins = 300;
     let pageNumber = 1;
+    const BASE_URL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${numberOfCoins}&page=${pageNumber}&sparkline=false`;
+
     axios
-      .get(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${numberOfCoins}&page=${pageNumber}&sparkline=false`
-      )
+      .get(BASE_URL)
       .then((res) => {
         setCoins(res.data);
         // console.log(res.data);
@@ -48,14 +52,32 @@ function App() {
     coin.name.toLowerCase().includes(search.toLocaleLowerCase())
   );
 
+  // todo add "market_cap_rank": to table
   return (
     <div className="coin-app">
+      {/* <Apps /> */}
+          {/* <Content /> */}
       <ThemeProvider theme={themeMode}>
         <Container>
           <GlobalStyles />
           <Toggle theme={theme} toggleTheme={toggleTheme} />
-          <Apps />
-          <Content />
+
+          {/* <div className="coin-container">
+            <div className="coin-row">
+              <thead>
+                <tr>
+                  <th className="coin">Coin Name</th>
+                  <th className="coin-symbol">Symbol</th>
+                  <th className="coin-price">Price</th>
+                  <th className="coin-volume">Volume</th>
+                  <th className="coin-percent">Range</th>
+                  <th className="coin-marketcap">Market Cap</th>
+                </tr>
+              </thead>
+            </div>
+          </div> */}
+          <Base />
+          
         </Container>
       </ThemeProvider>
 
@@ -91,6 +113,7 @@ function App() {
       {filteredCoins.map((coin) => {
         return (
           <Coin
+            rank={coin.market_cap_rank}
             key={coin.id}
             name={coin.name}
             image={coin.image}

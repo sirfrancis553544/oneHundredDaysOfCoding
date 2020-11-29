@@ -9,13 +9,14 @@ const Apps = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(50);
 
   useEffect(() => {
     const fetchPost = async () => {
       setLoading(true);
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const res = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false`);
       setPosts(res.data);
+
       setLoading(false);
     };
     fetchPost();
@@ -39,6 +40,7 @@ const Apps = () => {
         totalPosts={posts.length}
         paginate={paginate}
       />
+      
     </div>
   );
 };

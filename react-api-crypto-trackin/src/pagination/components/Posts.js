@@ -9,8 +9,11 @@ const Posts = ({ posts, loading }) => {
     <ul>
       {posts.map((post) => (
           <li key={post.id}>
-              <hr/>
-          {post.title}
+              {/* <hr/> */}
+          {post.market_cap_rank}
+          {post.name}
+          {post.symbol}
+         
         </li>
       ))}
     </ul>

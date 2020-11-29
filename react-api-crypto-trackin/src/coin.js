@@ -9,6 +9,7 @@ const coin = ({
   volume,
   priceChange,
   marketcap,
+  rank
 }) => {
   return (
     <div className="coin-container"> 
@@ -16,6 +17,7 @@ const coin = ({
           <div className="coin-row">
              
         <div className="coin">
+        <h2>{rank}</h2>
           <img src={image} alt="crypto" />
           <h1>{name}</h1>
           
