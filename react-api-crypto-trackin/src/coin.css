@@ -16,8 +16,8 @@
 .coin {
   display: flex;
   align-items: center;
-  padding-right: 24px;
-  min-width: 200px;
+  padding-right: 10px;
+  min-width: 100px;
 }
 
 .coin h1 {
@@ -30,17 +30,17 @@
   text-align: center;
 }
 .coin img {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   margin-right: 10px;
+  margin-left: 9px;
 }
 
 .coin-symbol {
   text-transform: uppercase;
   text-align: center;
-  min-width: 90px;
+  min-width: 50px;
 }
-
 
 .coin-data {
   display: flex;
@@ -62,7 +62,7 @@
 }
 
 .coin-percent {
-  width: 80px;
+  width: 50px;
 }
 
 .red {
@@ -76,17 +76,15 @@
 /* table */
 
 /* This is what we are focused on */
-.table-wrapper{
+.table-wrapper {
   overflow-y: scroll;
-  
+  overflow-x: scroll;
   height: 300px;
-  width: 500px;
-  min-width: 500px;
 }
 
-.table-wrapper th{
-    position: sticky;
-    top: 0;
+.table-wrapper th {
+  position: sticky;
+  top: 0;
 }
 
 /* A bit more styling to make it look better */
@@ -94,16 +92,38 @@
   background: CadetBlue;
 } */
 
-table{
+table {
   border-collapse: collapse;
   width: 100%;
+  font-size: 13px;
 }
 
-th{
-    background: #DDD;
+th {
+  background: #ddd;
 }
 
-td,th{
+td,
+th {
   padding: 10px;
   text-align: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
