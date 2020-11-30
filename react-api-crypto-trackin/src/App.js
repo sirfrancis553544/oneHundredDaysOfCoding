@@ -64,19 +64,29 @@ function App() {
 
           {/* <div className="coin-container">
             <div className="coin-row">
+            <table>
               <thead>
                 <tr>
+                  <th className="coin-percent">Range</th>
+                  <th className="coin-percent">Logo</th>
                   <th className="coin">Coin Name</th>
                   <th className="coin-symbol">Symbol</th>
                   <th className="coin-price">Price</th>
                   <th className="coin-volume">Volume</th>
-                  <th className="coin-percent">Range</th>
                   <th className="coin-marketcap">Market Cap</th>
                 </tr>
               </thead>
+            <Base />
+
+              </table>
             </div>
           </div> */}
-          <Base />
+
+                
+          
+            <Base />
+               
+          
           
         </Container>
       </ThemeProvider>
