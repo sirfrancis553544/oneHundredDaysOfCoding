@@ -4,14 +4,15 @@ import ReactPaginate from "react-paginate";
 import "./styles.css";
 import "../App.css";
 import "../coin.css";
-import Coins from "../coin";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 export default class Base extends Component {
   constructor(props) {
     super(props);
     this.state = {
       offset: 0,
       data: [],
-      numberOfCoins: 50,
+      numberOfCoins: 10,
       currentPage: 0,
     };
     this.handlePageClick = this.handlePageClick.bind(this);
@@ -34,26 +35,26 @@ export default class Base extends Component {
         const postData = slice.map((coin) => (
           <>
             <React.Fragment>
-              <tbody>
-                <tr key={coin.id}>
-                  <td className="coin">
-                    {coin.market_cap_rank}{" "}
+              <tbody key={coin.id}>
+                <tr>
+                  <td className="#" scope="row" data-label="#">{coin.market_cap_rank}</td>
+                  <td className="coin-symbol" scope="row" data-label="Logo">
                     <img src={coin.image} alt="" width="20" height="20" />
-                    {coin.name}{" "}
                   </td>
-                  <td className="coin-symbol">{coin.symbol}</td>
-                  <td className="coin-price">${coin.current_price}</td>
-                  <td className="coin-volume"> ${coin.total_volume}</td>
+                  <td className="coin-symbol" scope="row" data-label="Coin">{coin.name}</td>
+                  <td className="coin-symbol" scope="row" data-label="Symbol">{coin.symbol}</td>
+                  <td className="coin-price" scope="row" data-label="Price">${coin.current_price}</td>
+                  <td className="coin-volume" scope="row" data-label="Volume">${coin.total_volume}</td>
                   {coin.price_change_percentage_24h < 0 ? (
-                    <td className="coin-percent red">
-                      {coin.price_change_percentage_24h.toFixed(2)}%%
+                    <td className="coin-percent" scope="row" data-label="Price Down" className="coin-percent red">
+                      {coin.price_change_percentage_24h.toFixed(2)}%
                     </td>
                   ) : (
-                    <td className="coin-percent green">
+                    <td className="coin-percent" scope="row" data-label="Price Up" className="coin-percent green">
                       {coin.price_change_percentage_24h.toFixed(2)}%
                     </td>
                   )}
-                  <td className="coin-marketcap"> ${coin.market_cap}</td>
+                  <td className="coin-marketcap" scope="row" data-label="Market Cap">${coin.market_cap}</td>
                 </tr>
               </tbody>
             </React.Fragment>
@@ -87,51 +88,35 @@ export default class Base extends Component {
   }
   render() {
     return (
-      <div>
-        {/* <div className="coin-container">
-          <div className="coin-row">
-            <thead>
-              <tr>
-                <th className="coin">Coin Name</th>
-                <th className="coin-symbol">Symbol</th>
-                <th className="coin-price">Price</th>
-                <th className="coin-volume">Volume</th>
-                <th className="coin-percent">Range</th>
-                <th className="coin-marketcap">Market Cap</th>
-              </tr>
-            </thead>
-          </div>
-        </div> */}
+      <div >
+        {/* <span >Statement Summary</span> */}
+        <table >
+          <thead >
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Coin</th>
+              <th scope="col">Sym</th>
+              <th scope="col">Price</th>
+              <th scope="col">Volume</th>
+              <th scope="col">Rate</th>
+              <th scope="col">Mak. Cap</th>
+            </tr>
+          </thead>
+          {/* <tbody>
+            <tr> */}
+              <td>{this.state.postData}</td>
+            {/* </tr>
+          </tbody> */}
+        </table>
 
-        
-        
-
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                {/* <th>Coin Name</th>
-                <th>Symbol</th>
-                <th>Price</th>
-                <th>Volume</th>
-                <th>Range</th>
-                <th>Market Cap</th> */}
-              </tr>
-            </thead>
-            <tbody>
-            {this.state.postData}
-            </tbody>
-          </table>
-          
-        </div>
         <ReactPaginate
           previousLabel={"prev"}
           nextLabel={"next"}
           breakLabel={"..."}
           breakClassName={"break-me"}
           pageCount={this.state.pageCount}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
+          marginPagesDisplayed={0}
+          pageRangeDisplayed={2}
           onPageChange={this.handlePageClick}
           containerClassName={"pagination"}
           subContainerClassName={"pages pagination"}

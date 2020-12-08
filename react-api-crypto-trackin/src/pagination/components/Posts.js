@@ -1,5 +1,5 @@
 import React from "react";
-import load from "./loader.gif"
+import load from "./loading.gif"
 
 const Posts = ({ posts, loading }) => {
   if (loading) {

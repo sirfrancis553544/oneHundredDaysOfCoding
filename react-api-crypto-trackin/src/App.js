@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="coin-app">
       {/* <Apps /> */}
-          {/* <Content /> */}
+      {/* <Content /> */}
       <ThemeProvider theme={themeMode}>
         <Container>
           <GlobalStyles />
@@ -82,17 +82,13 @@ function App() {
             </div>
           </div> */}
 
-                
-          
+            
             <Base />
-               
-          
-          
         </Container>
       </ThemeProvider>
 
       {/* todo move search into its own component */}
-      <div className="coin-search">
+      {/* <div className="coin-search">
         <h1 className="coin-text">100 Top Crypto Currencies</h1>
         <h2 className="coin-text">Search a currency</h2>
         <form>
@@ -103,9 +99,9 @@ function App() {
             onChange={handleChange}
           />
         </form>
-      </div>
+      </div> */}
 
-      <div className="coin-container">
+      {/* <div className="coin-container">
         <div className="coin-row">
           <thead>
             <tr>
@@ -118,9 +114,9 @@ function App() {
             </tr>
           </thead>
         </div>
-      </div>
+      </div> */}
 
-      {filteredCoins.map((coin) => {
+      {/* {filteredCoins.map((coin) => {
         return (
           <Coin
             rank={coin.market_cap_rank}
@@ -134,7 +130,7 @@ function App() {
             volume={coin.total_volume}
           />
         );
-      })}
+      })} */}
     </div>
   );
 }
