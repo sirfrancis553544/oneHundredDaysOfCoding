@@ -49,3 +49,23 @@ p{
 	width: 40px;
 	text-align: center;
 }
+
+.mood_1 {
+	color: var(--mood-color-1);
+}
+
+.mood_2 {
+	color: var(--mood-color-2);
+}
+
+.mood_3 {
+	color: var(--mood-color-3);
+}
+
+.mood_4 {
+	color: var(--mood-color-4);
+}
+
+.mood_5 {
+	color: var(--mood-color-5);
+}
