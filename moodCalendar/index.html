@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>Mood Calendar</h2>
+      <h2 id="current"></h2>
       <h4>Color each day depending on what your mood was/is</h4>
       <p>Select Mood:</p>
       <div class="moods_container">
@@ -39,7 +39,7 @@
           <i class="far fa-sad-tear"></i>
         </button>
       </div>
-
+<div class="py-2">
       <p>then click on the circles below</p>
       <button id="randomize" class="action_btn randomize">
         <i class="fas fa-random"></i>
@@ -47,6 +47,10 @@
       <button id="clear" class="action_btn clear">
         <i class="fas fa-sync"></i>
       </button>
+</div>
+    
+
+
       <div class="calendar" id="calendar"></div>
     </div>
   </body>
