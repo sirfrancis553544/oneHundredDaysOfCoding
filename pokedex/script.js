@@ -1,5 +1,5 @@
 const poke_container = document.getElementById("poke_container");
-const pokemons_number = 150;
+const pokemons_number = 950;
 const colors = {
   fire: "#FDDFDF",
   grass: "#DEFDE0",
@@ -36,7 +36,7 @@ function createPokemonCard(pokemon) {
   pokemonEl.classList.add("pokemon");
 
   const poke_types = pokemon.types.map((type) => type.type.name);
-  const type = main_type.find((type) => poke_types.indexOf(type) > 1);
+  const type = main_type.find((type) => poke_types.indexOf(type) > -1);
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
   const color = colors[type];
 
